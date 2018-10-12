@@ -1,0 +1,5 @@
+{
+    "username": "user",
+    "token": "password",
+    "ignoreOrgs": ["Companies", "to", "ignore"]
+}
