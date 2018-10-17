@@ -1,5 +1,6 @@
 {
     "username": "user",
     "token": "password",
-    "ignoreOrgs": ["Companies", "to", "ignore"]
+    "ignoreOrgs": ["Companies", "to", "ignore"],
+    "host": "company.zendesk.com"
 }

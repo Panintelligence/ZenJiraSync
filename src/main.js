@@ -14,7 +14,7 @@ const zendeskApi = (method, path, body, callback) => {
     }
 
     const request = http.request({
-        hostname: 'panintelligencesupport.zendesk.com',
+        hostname: zendeskConfig.host,
         path: path,
         method: method,
         headers: headers
@@ -98,7 +98,7 @@ const syncCustomers = () => {
         const zenOrgNames = zenOrgs.organizations
             .filter((o)=>{return !zendeskConfig.ignoreOrgs.includes(o.name)})
             .map((o) => { return o.name });
-        jiraApi('GET', '/rest/jiracustomfieldeditorplugin/1/user/customfields/10100/contexts/10205/options', null, null, (jiraCustomersString) => {
+        jiraApi('GET', `/rest/jiracustomfieldeditorplugin/1/user/customfields/${jiraConfig.customerField.id}/contexts/${jiraConfig.customerField.context}/options`, null, null, (jiraCustomersString) => {
             const jiraCustomers = JSON.parse(jiraCustomersString);
             const jiraCustomersNames = jiraCustomers.map((o) => { return o.optionvalue });
             const customersToAdd = [];
@@ -113,9 +113,7 @@ const syncCustomers = () => {
             customersToAdd.forEach((customerName) => {
                 const option = JSON.stringify({"optionvalue": customerName});
                 const header = {'Content-Type':'application/json'};
-                jiraApi('POST', '/rest/jiracustomfieldeditorplugin/1/user/customfields/10100/contexts/10205/options', header, option, (data)=>{
-                    // console.log(data);
-                });
+                jiraApi('POST', `/rest/jiracustomfieldeditorplugin/1/user/customfields/${jiraConfig.customerField.id}/contexts/${jiraConfig.customerField.context}/options`, header, option);
             });
         }).end();
     }).end()

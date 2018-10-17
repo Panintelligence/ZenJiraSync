@@ -1,5 +1,9 @@
 {
     "hostname": "jira.pi-dash.uk",
     "username": "user",
-    "password": "password"
+    "password": "password",
+    "customerField": {
+        "id": 0000000,
+        "context": 00000000
+    }
 }
