@@ -1,5 +1,5 @@
 {
-    "hostname": "jira.pi-dash.uk",
+    "hostname": "your.jira.url",
     "username": "user",
     "password": "password",
     "customerField": {
