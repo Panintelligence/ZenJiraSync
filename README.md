@@ -1,5 +1,5 @@
 # ZenJiraSync
-This script will pull all the Organizations in Zendesk and add them as field options to a customfield in Jira
+This script pulls all the Organizations in Zendesk and add them as field options to a customfield in Jira
 
 # Jira set up
 Requirements:
