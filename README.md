@@ -1,4 +1,4 @@
-# ZenJiraSync
+# ![ZenJiraSync Logo](changes/images/ZenJiraSync-logo-small.png) ZenJiraSync
 This script pulls all the Organizations in Zendesk and add them as field options to a customfield in Jira
 
 # Jira set up
