@@ -3,7 +3,7 @@ const zendeskConfig = require('./config/zendesk-config.json')
 const jiraConfig = require('./config/jira-config.json')
 
 const zendeskApi = (method, path, body, callback) => {
-    const auth = Buffer.from(`${zendeskConfig.username}/token:${zendeskConfig.token}`).toString('base64');
+    const auth = Buffer.from(`${zendeskConfig.username}:${zendeskConfig.token}`).toString('base64');
     const headers = {
         'Accept': 'application/json',
         'Authorization': `Basic ${auth}`
